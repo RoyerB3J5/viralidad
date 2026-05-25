@@ -1,0 +1,462 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+@font-face {
+  font-family: "Georgia";
+  src: url("/fonts/georgiaNormal.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("/fonts/georgiaBold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: url("/fonts/georgiaItalic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: url("/fonts/georgiaBoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Times New Roman";
+  src: url("/fonts/TimesNewRoman.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Times New Roman";
+  src: url("/fonts/TimesNewRomanItalic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Times New Roman";
+  src: url("/fonts/TimesNewRomanBold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/fonts/SegoeUILight.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/fonts/SegoeUISemibold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+
+
+@theme {
+  --font-family: "Georgia", sans-serif;
+  --font-title: "Nunito Sans", sans-serif;
+  --font-times: "Times New Roman", sans-serif;
+  --font-sergoe: "Segoe UI", sans-serif;
+  --color-accent: #f5f5f5;
+  --color-primary: #002d63;
+  --color-secondary: #b3ef4b;
+  --color-third: #1f78df;
+  --color-back: #004096;
+  --color-text: rgba(245, 245, 245, 0.55);
+  --breakpoint-xs: 400px;
+  --breakpoint-3xl: 106rem;
+}
+
+@layer base {
+  * {
+    font-family: var(--font-family);
+  }
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+.container-full {
+  width: 100%;
+  max-width: 100vw;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 1280px) {
+  .container-full {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 1280px;
+  }
+}
+
+.button-gradient {
+  background-image: linear-gradient(
+    134.91601956219327deg,
+    rgb(245, 245, 0) 0%,
+    rgb(230, 200, 0) 40%,
+    rgb(255, 241, 118) 70%,
+    rgb(230, 200, 0) 100%
+  );
+  box-shadow:
+    0px 0px 18px 0px rgba(255, 235, 0, 0.75),
+    0px 0px 40px 0px rgba(255, 235, 0, 0.4),
+    0px 4px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.paragraph {
+  font-size: 26px;
+  line-height: 135%;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .paragraph {
+    font-size: 16px;
+    line-height: 100%;
+  }
+}
+
+.masked-image {
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+}
+.comu-back {
+  position: relative;
+}
+
+.comu-back::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 6, 6, 0) 40%,
+    rgba(6, 6, 6, 0.6) 70%,
+    rgba(6, 6, 6, 0.92) 100%
+  );
+  pointer-events: none;
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+.comu-back:hover::after {
+  transform: scaleY(1.03);
+}
+.subtitles {
+  font-family: var(--font-title);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+@media (max-width: 767px) {
+  .subtitles {
+    font-size: 32px;
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounceBut {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Clase normal sin animación */
+.bounce-button {
+  transition: transform 0.3s ease;
+}
+
+/* Clase active con animación bounce */
+.bounce-button.active {
+  animation: bounceBut 1s ease-in-out infinite;
+}
+
+/* Desactivar bounce en pantallas menores a 700px */
+@media (max-width: 699px) {
+  .bounce-button.active {
+    animation: none !important;
+  }
+}
+
+@keyframes fadeUpFast {
+  from {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUpFast2 {
+  from {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUpFast3 {
+  from {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  to {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn2 {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomIn3 {
+  from {
+    opacity: 0;
+    transform: scale3d(0.8, 0.8, 1);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fadeLeft2 {
+  from {
+    opacity: 0;
+    transform: translateX(15%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes containerImageFade {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+@keyframes ImageFade {
+  from {
+    opacity: 0;
+    transform: translate3d(0px, 0%, 0px) scale3d(1.5, 1.5, 1);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1);
+    filter: blur(0px);
+  }
+}
+
+.animation-up-fast {
+  opacity: 0;
+}
+
+.animation-up-fast.active {
+  animation: fadeUpFast 0.4s ease-in-out forwards;
+}
+
+.animation-zoom-in {
+  opacity: 0;
+}
+
+.animation-zoom-in.active {
+  animation: zoomIn 0.4s ease-in-out forwards;
+}
+
+.animation-up-fast-2 {
+  opacity: 0;
+}
+
+.animation-up-fast-2.active {
+  animation: fadeUpFast2 0.6s ease-in-out forwards;
+}
+
+.animation-up-fast-3 {
+  opacity: 0;
+}
+
+.animation-up-fast-3.active {
+  animation: fadeUpFast3 0.6s ease-in-out forwards;
+}
+
+.animation-zoom-in-2 {
+  opacity: 0;
+}
+
+.animation-zoom-in-2.active {
+  animation: zoomIn2 0.6s ease-in-out forwards;
+}
+
+.animation-zoom-in-3 {
+  opacity: 0;
+  transform-style: preserve-3d;
+}
+
+.animation-zoom-in-3.active {
+  animation: zoomIn3 0.8s ease-in-out forwards;
+  transform-style: preserve-3d;
+}
+
+.animation-fade-down {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.animation-fade-down.active {
+  animation: fadeDown 0.6s ease-in-out forwards;
+}
+
+.animation-fade-left {
+  opacity: 0;
+}
+
+.animation-fade-left.active {
+  animation: fadeLeft 0.6s ease-in-out forwards;
+}
+
+.animation-fade-left-2 {
+  opacity: 0;
+}
+
+.animation-fade-left-2.active {
+  animation: fadeLeft 0.8s ease-in-out forwards;
+}
+
+.animation-fade-left-3 {
+  opacity: 0;
+}
+
+.animation-fade-left-3.active {
+  animation: fadeLeft2 0.6s ease-in-out forwards;
+}
+
+.animation-zoom-out {
+  opacity: 0;
+}
+
+.animation-zoom-out.active {
+  animation: zoomOut 0.6s ease-in-out forwards;
+}
+
+.animation-fade-right {
+  opacity: 0;
+}
+
+.animation-fade-right.active {
+  animation: fadeRight 0.6s ease-in-out forwards;
+}
+
+.container-image-fade {
+  opacity: 0;
+}
+
+.container-image-fade.active {
+  animation: containerImageFade 0.6s ease-in-out forwards;
+}
+
+.image-fade {
+  opacity: 0;
+}
+
+.image-fade.active {
+  animation: ImageFade 0.6s ease-in-out forwards;
+}

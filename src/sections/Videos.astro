@@ -1,0 +1,183 @@
+<section class="container-full flex flex-col justify-center items-center gap-11 pt-6 pb-23">
+  <div class="flex flex-col justify-center items-center gap-2.5 text-center">
+    <h2 class="text-[30.1px] md:text-[54px] lg:text-[68px] text-text leading-[108%] text-center font-normal">+5 Billones de <span class="italic text-accent">visitas</span> <br/> conseguidas <span class="text-accent">con la metodología</span></h2>
+    <p class="font-sergoe font-light text-[10px] text-text letter-spacing-[1px] uppercase">Pasa el cursor para pausar</p>
+  </div>
+  <div class="flex flex-col justify-center items-center gap-2 w-full">
+    <style>
+      .carousel-track {
+        gap: 8px;
+        align-items: stretch;
+      }
+      .carousel-slide {
+        flex: 0 0 100%;
+      }
+      .carousel {
+        overflow: hidden;
+      }
+    </style>
+
+    <div class="carousel overflow-hidden w-full">
+      <div class=" carousel-track flex w-full">
+        <!-- Group A (original 9 items) -->
+        <div class="carousel-slide w-full flex justify-center items-center gap-2">
+          {
+            Array.from({length: 9}, (_, i)=>( 
+                <div class="overflow-hidden shrink-0 w-[calc((100%-24px)/4)] md:w-[calc((100%-40px)/6)] lg:w-[calc((100%-64px)/9)] h-auto relative rounded-sm border group border-white/10 cursor-pointer" style="aspect-ratio: 128 / 229;">
+                  <div class="w-full h-full absolute z-10 bg-black/40 group-hover:bg-black/0 transition-all duration-300 ease-in-out"></div>
+                  <img src={`/images/video-${i+1}.webp`} alt={`Video ${i+1}`} class="w-full h-full absolute inset-0 object-cover grayscale-100 group-hover:grayscale-50 group-hover:scale-110 transition-transform duration-300 ease-in-out" width="128" height="229" />
+                </div>
+            ))
+          }
+        </div>
+        <!-- Group B (duplicate 9 items for infinite loop) -->
+        <div class="carousel-slide w-full flex justify-center items-center gap-2">
+          {
+            Array.from({length: 9}, (_, i)=>( 
+                <div class="overflow-hidden shrink-0 w-[calc((100%-24px)/4)] md:w-[calc((100%-40px)/6)] lg:w-[calc((100%-64px)/9)] h-auto relative rounded-sm border group border-white/10 cursor-pointer" style="aspect-ratio: 128 / 229;">
+                  <div class="w-full h-full absolute z-10 bg-black/40 group-hover:bg-black/0 transition-all duration-300 ease-in-out"></div>
+                  <img src={`/images/video-${i+1}.webp`} alt={`Video ${i+1}`} class="w-full h-full absolute inset-0 object-cover grayscale-100 group-hover:grayscale-50 group-hover:scale-110 transition-transform duration-300 ease-in-out" width="128" height="229" />
+                </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    
+    <div class="carousel overflow-hidden w-full" data-direction="backward">
+      <div class="carousel-track flex w-full">
+        <!-- Group B (duplicate 9 items for infinite loop - debe estar primero para ir hacia atrás) -->
+        <div class="carousel-slide w-full flex justify-center items-center gap-2">
+          {
+            Array.from({length: 9}, (_, i)=>( 
+              <div class="overflow-hidden shrink-0 w-[calc((100%-24px)/4)] md:w-[calc((100%-40px)/6)] lg:w-[calc((100%-64px)/9)] h-auto relative rounded-sm border group border-white/10 cursor-pointer" style="aspect-ratio: 128 / 229;">
+                <div class="w-full h-full absolute z-10 bg-black/40 group-hover:bg-black/0 transition-all duration-300 ease-in-out"></div>
+                <img src={`/images/video-${i+10}.webp`} alt={`Video ${i+10}`} class="w-full h-full absolute inset-0 object-cover grayscale-100 group-hover:grayscale-50 group-hover:scale-110 transition-transform duration-300 ease-in-out"  width="128" height="229" />
+              </div>
+            ))
+          }
+        </div>
+        <!-- Group A (original 9 items) -->
+        <div class="carousel-slide w-full flex justify-center items-center gap-2">
+          {
+            Array.from({length: 9}, (_, i)=>( 
+              <div class="overflow-hidden shrink-0 w-[calc((100%-24px)/4)] md:w-[calc((100%-40px)/6)] lg:w-[calc((100%-64px)/9)] h-auto relative rounded-sm border group border-white/10 cursor-pointer" style="aspect-ratio: 128 / 229;">
+                <div class="w-full h-full absolute z-10 bg-black/40 group-hover:bg-black/0 transition-all duration-300 ease-in-out"></div>
+                <img src={`/images/video-${i+10}.webp`} alt={`Video ${i+10}`} class="w-full h-full absolute inset-0 object-cover grayscale-100 group-hover:grayscale-50 group-hover:scale-110 transition-transform duration-300 ease-in-out"  width="128" height="229" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel overflow-hidden w-full" data-direction="forward">
+      <div class="carousel-track flex w-full">
+        <!-- Group A (original 9 items) -->
+        <div class="carousel-slide w-full flex justify-center items-center gap-2">
+          {
+            Array.from({length: 9}, (_, i)=>( 
+              <div class="overflow-hidden shrink-0 w-[calc((100%-24px)/4)] md:w-[calc((100%-40px)/6)] lg:w-[calc((100%-64px)/9)] h-auto relative rounded-sm border group border-white/10 cursor-pointer" style="aspect-ratio: 128 / 229;">
+                <div class="w-full h-full absolute z-10 bg-black/40 group-hover:bg-black/0 transition-all duration-300 ease-in-out"></div>
+                <img src={`/images/video-${i+19}.webp`} alt={`Video ${i+19}`} class="w-full h-full absolute inset-0 object-cover grayscale-100 group-hover:grayscale-50 group-hover:scale-110 transition-transform duration-300 ease-in-out"  width="128" height="229" />
+              </div>
+            ))
+          }
+        </div>
+        <!-- Group B (duplicate 9 items for infinite loop) -->
+        <div class="carousel-slide w-full flex justify-center items-center gap-2">
+          {
+            Array.from({length: 9}, (_, i)=>( 
+              <div class="overflow-hidden shrink-0 w-[calc((100%-24px)/4)] md:w-[calc((100%-40px)/6)] lg:w-[calc((100%-64px)/9)] h-auto relative rounded-sm border group border-white/10 cursor-pointer" style="aspect-ratio: 128 / 229;">
+                <div class="w-full h-full absolute z-10 bg-black/40 group-hover:bg-black/0 transition-all duration-300 ease-in-out"></div>
+                <img src={`/images/video-${i+19}.webp`} alt={`Video ${i+19}`} class="w-full h-full absolute inset-0 object-cover grayscale-100 group-hover:grayscale-50 group-hover:scale-110 transition-transform duration-300 ease-in-out"  width="128" height="229" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousels = document.querySelectorAll('.carousel');
+      
+      carousels.forEach((carouselElement) => {
+        const carouselContainer = carouselElement as HTMLElement;
+        const track = carouselContainer.querySelector('.carousel-track') as HTMLElement;
+        if (!track) return;
+        
+        const slides = Array.from(
+          track.querySelectorAll<HTMLElement>('.carousel-slide')
+        );
+        
+        if (slides.length < 2) return;
+
+        let anim: Animation | null = null;
+        const speedPxPerSec = 15;
+        const direction = carouselContainer.getAttribute('data-direction') || 'forward';
+
+        function startAnim() {
+          if (anim) anim.cancel();
+          
+          const first = slides[0];
+          const slideRect = first.getBoundingClientRect();
+          const slideWidth = Math.round(slideRect.width);
+          
+          if (!slideWidth) return;
+          
+          const trackStyle = getComputedStyle(track);
+          const gap = parseFloat(trackStyle.gap || '0') || 0;
+          const distance = slideWidth + gap;
+
+          const duration = Math.max(3000, (distance / speedPxPerSec) * 1000);
+
+          // Si direction es "backward", el translate es positivo (hacia la derecha)
+          // Si direction es "forward", el translate es negativo (hacia la izquierda)
+          const translateValue = direction === 'backward' ? distance : -distance;
+
+          if (direction === 'backward') {
+            anim = track.animate(
+              [
+                { transform: `translateX(-${distance}px)` },  // empieza en el segundo slide
+                { transform: 'translateX(0px)' },              // termina en el primero
+              ],
+              { duration, iterations: Infinity, easing: 'linear' }
+            );
+          } else {
+            anim = track.animate(
+              [
+                { transform: 'translateX(0px)' },
+                { transform: `translateX(-${distance}px)` },
+              ],
+              { duration, iterations: Infinity, easing: 'linear' }
+            );
+          }
+
+          // Pausa/reproduce al pasar mouse
+          if (carouselContainer.dataset.carouselHoverBound !== '1') {
+            carouselContainer.addEventListener('mouseenter', () => anim?.pause());
+            carouselContainer.addEventListener('mouseleave', () => anim?.play());
+            carouselContainer.dataset.carouselHoverBound = '1';
+          }
+        }
+
+        startAnim();
+        
+        // Re-inicializa la animación al cambiar tamaño de ventana
+        window.addEventListener('resize', () => {
+          if (anim) anim.cancel();
+          
+          const newSlides = Array.from(
+            track.querySelectorAll<HTMLElement>('.carousel-slide')
+          );
+          
+          if (newSlides.length >= 2) {
+            startAnim();
+          }
+        });
+      });
+    });
+  </script>
+</section>

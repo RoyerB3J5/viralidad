@@ -1,0 +1,331 @@
+---
+const contentInfluencers =[
+  {
+    image:'sensei',
+    name:'Sensei',
+    label:'@elsensei',
+    mount:'+460.000€',
+    description:'con el sistema',
+    img:'bar-1'
+  },
+  {
+    image:'hugo',
+    name:'Hugo Hernandez',
+    label:'@hugo_atraccioninterpersonal',
+    mount:'+460.000€',
+    description:'con el sistema',
+    img:'bar-2'
+  },
+  {
+    image:'usa',
+    name:'Usa Crédito',
+    label:'@usacredito',
+    mount:'+184.000€',
+    description:'con el sistema',
+    img:'bar-1'
+  },
+  {
+    image:'joel',
+    name:'Joel Joli',
+    label:'@joeljoji',
+    mount:'+460.000€',
+    description:'con el sistema',
+    img:'bar-2'
+  },
+  {
+    image:'anxo',
+    name:'Anxo Pérez',
+    label:'@anxobelts',
+    mount:'+138.000€',
+    description:'con el sistema',
+    img:'bar-3'
+  },
+  {
+    image:'diego',
+    name:'Diego García',
+    label:'@diexpower',
+    mount:'+101.200€',
+    description:'con el sistema',
+    img:'bar-1'
+  },
+  {
+    image:'diego',
+    name:'Diego García',
+    label:'@diexpower',
+    mount:'+101.200€',
+    description:'con el sistema',
+    img:'bar-1'
+  },
+  {
+    image:'franklin',
+    name:'Franklin Ovalles',
+    label:'@elgocho',
+    mount:'+87.400€',
+    description:'con el sistema',
+    img:'bar-1'
+  },
+  {
+    image:'sergio',
+    name:'Sergio Llorente',
+    label:'@instalaciones_llorente',
+    mount:'+55.000€',
+    description:'con el sistema',
+    img:'bar-3'
+  },
+]
+---
+<section class='w-full flex justify-center items-center overflow-hidden relative' style="background-image: url('/images/fondo-sistema.webp'); background-attachment: fixed; background-position: center; background-size: cover; background-repeat: no-repeat;">
+  <div class="w-full h-full bg-[#0C0C0C]/60 absolute inset-0 -z-5"></div>
+  <div class="container-full flex flex-col justify-center items-center gap-10.5 py-20 relative z-10">
+    <div class="flex flex-col justify-center items-center gap-3">
+      <p class="text-[9px] font-sergoe font-light tracking-[2.34px] uppercase text-[#F5F5F561] text-center">Ingresos verificados</p>
+      <h2 class="text-[30.1px] md:text-[54px] lg:text-[68px] text-accent leading-[108%] text-center font-normal">+35.000.000€ <span class="text-text italic">generados <br/> con</span> el sistema</h2>
+      <p class="text-[10px] font-sergoe font-light text-[#F5F5F561] text-center uppercase tracking-[1px]">Pasa el cursor para pausar</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 justify-center items-center gap-2 w-full h-auto">
+      <style>
+        .carousel-track-vertical {
+          gap: 8px;
+          align-items: center;
+        }
+        .carousel-slide-vertical {
+          flex: 0 0 auto;
+        }
+        .carousel-vertical {
+          overflow-y: hidden;
+        }
+      </style>
+
+      <!-- Columna 1: Forward (arriba) -->
+      <div class="carousel-vertical overflow-hidden  w-full">
+        <div class="carousel-track-vertical flex flex-col w-full">
+          <!-- Group A (original 3 items) -->
+          <div class="carousel-slide-vertical w-full flex flex-col justify-center items-center gap-2">
+            {contentInfluencers.slice(0, 3).map((influencer) => (
+              <div class="flex flex-col justify-center items-start gap-3 bg-[#111111] rounded-xs border border-white/5 p-4.5 w-full hover:scale-101 transition-all duration-300">
+                <img src={`/images/${influencer.image}.webp`} alt={influencer.name} class="w-[34px] h-[34px] rounded-full grayscale-100" width="64" height="64" loading="lazy" decoding="async"/>
+                <div class="flex flex-col justify-center items-start gap-1">
+                  <h3 class="font-sergoe text-[12px] text-[#F5F5F5] tracking-[0.12px] font-semibold">{influencer.name}</h3>
+                  <p class="text-[9px] font-sergoe font-light tracking-[0.54px] text-[#F5F5F561]">{influencer.label}</p>
+                </div>
+                <div class="flex flex-col justify-center items-start gap-1">
+                  <div class="flex justify-start items-center gap-[7px]">
+                    <p class="text-[22px] font-normal leading-[100%] text-[#F5F5F5]">{influencer.mount}</p>
+                    <div class="flex justify-center items-center py-0.5 px-[7px] border border-[#C9A84C4D] rounded-[2px]">
+                      <p class="text-[8px] font-semibold font-sergoe tracking-[1.12px] leading-[100%] text-[#C9A84C]">/ MES</p>
+                    </div>
+                  </div>
+                  <p class='text-[9px] font-sergoe font-light tracking-[0.54px] text-[#F5F5F561]'>{influencer.description}</p>
+                </div>
+                <img src={`/images/${influencer.img}.svg`} alt={`Bar for ${influencer.name}`} class="w-full h-auto" width="189" height="2" loading="lazy" decoding="async"/>
+              </div>
+            ))}
+          </div>
+          <!-- Group B (duplicate 3 items for infinite loop) -->
+          <div class="carousel-slide-vertical w-full flex flex-col justify-center items-center gap-2">
+            {contentInfluencers.slice(0, 3).map((influencer) => (
+              <div class="flex flex-col justify-center items-start gap-3 bg-[#111111] rounded-xs border border-white/5 p-4.5 w-full hover:scale-101 transition-all duration-300">
+                <img src={`/images/${influencer.image}.webp`} alt={influencer.name} class="w-[34px] h-[34px] rounded-full grayscale-100" width="64" height="64" loading="lazy" decoding="async"/>
+                <div class="flex flex-col justify-center items-start gap-1">
+                  <h3 class="font-sergoe text-[12px] text-[#F5F5F5] tracking-[0.12px] font-semibold">{influencer.name}</h3>
+                  <p class="text-[9px] font-sergoe font-light tracking-[0.54px] text-[#F5F5F561]">{influencer.label}</p>
+                </div>
+                <div class="flex flex-col justify-center items-start gap-1">
+                  <div class="flex justify-start items-center gap-[7px]">
+                    <p class="text-[22px] font-normal leading-[100%] text-[#F5F5F5]">{influencer.mount}</p>
+                    <div class="flex justify-center items-center py-0.5 px-[7px] border border-[#C9A84C4D] rounded-[2px]">
+                      <p class="text-[8px] font-semibold font-sergoe tracking-[1.12px] leading-[100%] text-[#C9A84C]">/ MES</p>
+                    </div>
+                  </div>
+                  <p class='text-[9px] font-sergoe font-light tracking-[0.54px] text-[#F5F5F561]'>{influencer.description}</p>
+                </div>
+                <img src={`/images/${influencer.img}.svg`} alt={`Bar for ${influencer.name}`} class="w-full h-auto" width="189" height="2" loading="lazy" decoding="async"/>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 2: Backward (abajo) -->
+      <div class="carousel-vertical overflow-hidden w-full" data-direction="backward">
+        <div class="carousel-track-vertical flex flex-col w-full">
+          <!-- Group B (duplicate 3 items - debe estar primero para ir hacia atrás) -->
+          <div class="carousel-slide-vertical w-full flex flex-col justify-center items-center gap-2">
+            {contentInfluencers.slice(3, 6).map((influencer) => (
+              <div class="flex flex-col justify-center items-start gap-3 bg-[#111111] rounded-xs border border-white/5 p-4.5 w-full hover:scale-101 transition-all duration-300">
+                <img src={`/images/${influencer.image}.webp`} alt={influencer.name} class="w-[34px] h-[34px] rounded-full grayscale-100" width="64" height="64" loading="lazy" decoding="async"/>
+                <div class="flex flex-col justify-center items-start gap-1">
+                  <h3 class="font-sergoe text-[12px] text-[#F5F5F5] tracking-[0.12px] font-semibold">{influencer.name}</h3>
+                  <p class="text-[9px] font-sergoe font-light tracking-[0.54px] text-[#F5F5F561]">{influencer.label}</p>
+                </div>
+                <div class="flex flex-col justify-center items-start gap-1">
+                  <div class="flex justify-start items-center gap-[7px]">
+                    <p class="text-[22px] font-normal leading-[100%] text-[#F5F5F5]">{influencer.mount}</p>
+                    <div class="flex justify-center items-center py-0.5 px-[7px] border border-[#C9A84C4D] rounded-[2px]">
+                      <p class="text-[8px] font-semibold font-sergoe tracking-[1.12px] leading-[100%] text-[#C9A84C]">/ MES</p>
+                    </div>
+                  </div>
+                  <p class='text-[9px] font-sergoe font-light tracking-[0.54px] text-[#F5F5F561]'>{influencer.description}</p>
+                </div>
+                <img src={`/images/${influencer.img}.svg`} alt={`Bar for ${influencer.name}`} class="w-full h-auto" width="189" height="2" loading="lazy" decoding="async"/>
+              </div>
+            ))}
+          </div>
+          <!-- Group A (original 3 items) -->
+          <div class="carousel-slide-vertical w-full flex flex-col justify-center items-center gap-2">
+            {contentInfluencers.slice(3, 6).map((influencer) => (
+              <div class="flex flex-col justify-center items-start gap-3 bg-[#111111] rounded-xs border border-white/5 p-4.5 w-full hover:scale-101 transition-all duration-300">
+                <img src={`/images/${influencer.image}.webp`} alt={influencer.name} class="w-[34px] h-[34px] rounded-full grayscale-100" width="64" height="64" loading="lazy" decoding="async"/>
+                <div class="flex flex-col justify-center items-start gap-1">
+                  <h3 class="font-sergoe text-[12px] text-[#F5F5F5] tracking-[0.12px] font-semibold">{influencer.name}</h3>
+                  <p class="text-[9px] font-sergoe font-light tracking-[0.54px] text-[#F5F5F561]">{influencer.label}</p>
+                </div>
+                <div class="flex flex-col justify-center items-start gap-1">
+                  <div class="flex justify-start items-center gap-[7px]">
+                    <p class="text-[22px] font-normal leading-[100%] text-[#F5F5F5]">{influencer.mount}</p>
+                    <div class="flex justify-center items-center py-0.5 px-[7px] border border-[#C9A84C4D] rounded-[2px]">
+                      <p class="text-[8px] font-semibold font-sergoe tracking-[1.12px] leading-[100%] text-[#C9A84C]">/ MES</p>
+                    </div>
+                  </div>
+                  <p class='text-[9px] font-sergoe font-light tracking-[0.54px] text-[#F5F5F561]'>{influencer.description}</p>
+                </div>
+                <img src={`/images/${influencer.img}.svg`} alt={`Bar for ${influencer.name}`} class="w-full h-auto" width="189" height="2" loading="lazy" decoding="async"/>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 3: Forward (arriba) -->
+      <div class="carousel-vertical overflow-hidden w-full hidden md:block" data-direction="forward">
+        <div class="carousel-track-vertical flex flex-col w-full">
+          <!-- Group A (original 3 items) -->
+          <div class="carousel-slide-vertical w-full flex flex-col justify-center items-center gap-2">
+            {contentInfluencers.slice(6, 9).map((influencer) => (
+              <div class="flex flex-col justify-center items-start gap-3 bg-[#111111] rounded-xs border border-white/5 p-4.5 w-full hover:scale-101 transition-all duration-300">
+                <img src={`/images/${influencer.image}.webp`} alt={influencer.name} class="w-[34px] h-[34px] rounded-full grayscale-100" width="64" height="64" loading="lazy" decoding="async"/>
+                <div class="flex flex-col justify-center items-start gap-1">
+                  <h3 class="font-sergoe text-[12px] text-[#F5F5F5] tracking-[0.12px] font-semibold">{influencer.name}</h3>
+                  <p class="text-[9px] font-sergoe font-light tracking-[0.54px] text-[#F5F5F561]">{influencer.label}</p>
+                </div>
+                <div class="flex flex-col justify-center items-start gap-1">
+                  <div class="flex justify-start items-center gap-[7px]">
+                    <p class="text-[22px] font-normal leading-[100%] text-[#F5F5F5]">{influencer.mount}</p>
+                    <div class="flex justify-center items-center py-0.5 px-[7px] border border-[#C9A84C4D] rounded-[2px]">
+                      <p class="text-[8px] font-semibold font-sergoe tracking-[1.12px] leading-[100%] text-[#C9A84C]">/ MES</p>
+                    </div>
+                  </div>
+                  <p class='text-[9px] font-sergoe font-light tracking-[0.54px] text-[#F5F5F561]'>{influencer.description}</p>
+                </div>
+                <img src={`/images/${influencer.img}.svg`} alt={`Bar for ${influencer.name}`} class="w-full h-auto" width="189" height="2" loading="lazy" decoding="async"/>
+              </div>
+            ))}
+          </div>
+          <!-- Group B (duplicate 3 items for infinite loop) -->
+          <div class="carousel-slide-vertical w-full flex flex-col justify-center items-center gap-2">
+            {contentInfluencers.slice(6, 9).map((influencer) => (
+              <div class="flex flex-col justify-center items-start gap-3 bg-[#111111] rounded-xs border border-white/5 p-4.5 w-full hover:scale-101 transition-all duration-300">
+                <img src={`/images/${influencer.image}.webp`} alt={influencer.name} class="w-[34px] h-[34px] rounded-full grayscale-100" width="64" height="64" loading="lazy" decoding="async"/>
+                <div class="flex flex-col justify-center items-start gap-1">
+                  <h3 class="font-sergoe text-[12px] text-[#F5F5F5] tracking-[0.12px] font-semibold">{influencer.name}</h3>
+                  <p class="text-[9px] font-sergoe font-light tracking-[0.54px] text-[#F5F5F561]">{influencer.label}</p>
+                </div>
+                <div class="flex flex-col justify-center items-start gap-1">
+                  <div class="flex justify-start items-center gap-[7px]">
+                    <p class="text-[22px] font-normal leading-[100%] text-[#F5F5F5]">{influencer.mount}</p>
+                    <div class="flex justify-center items-center py-0.5 px-[7px] border border-[#C9A84C4D] rounded-[2px]">
+                      <p class="text-[8px] font-semibold font-sergoe tracking-[1.12px] leading-[100%] text-[#C9A84C]">/ MES</p>
+                    </div>
+                  </div>
+                  <p class='text-[9px] font-sergoe font-light tracking-[0.54px] text-[#F5F5F561]'>{influencer.description}</p>
+                </div>
+                <img src={`/images/${influencer.img}.svg`} alt={`Bar for ${influencer.name}`} class="w-full h-auto" width="189" height="2" loading="lazy" decoding="async"/>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const carousels = document.querySelectorAll('.carousel-vertical');
+        
+        carousels.forEach((carouselElement) => {
+          const carouselContainer = carouselElement as HTMLElement;
+          const track = carouselContainer.querySelector('.carousel-track-vertical') as HTMLElement;
+          if (!track) return;
+          
+          const slides = Array.from(
+            track.querySelectorAll<HTMLElement>('.carousel-slide-vertical')
+          );
+          
+          if (slides.length < 2) return;
+
+          let anim: Animation | null = null;
+          const speedPxPerSec = 15;
+          const direction = carouselContainer.getAttribute('data-direction') || 'forward';
+
+          function startAnim() {
+            if (anim) anim.cancel();
+            
+            const first = slides[0];
+            const slideRect = first.getBoundingClientRect();
+            const slideHeight = Math.round(slideRect.height);
+            
+            if (!slideHeight) return;
+            
+            // Establecer la altura del contenedor carousel igual a la altura de un slide
+            carouselContainer.style.height = slideHeight + 'px';
+            
+            const trackStyle = getComputedStyle(track);
+            const gap = parseFloat(trackStyle.gap || '0') || 0;
+            const distance = slideHeight + gap;
+
+            const duration = Math.max(3000, (distance / speedPxPerSec) * 1000);
+
+            if (direction === 'backward') {
+              anim = track.animate(
+                [
+                  { transform: `translateY(-${distance}px)` },
+                  { transform: 'translateY(0px)' },
+                ],
+                { duration, iterations: Infinity, easing: 'linear' }
+              );
+            } else {
+              anim = track.animate(
+                [
+                  { transform: 'translateY(0px)' },
+                  { transform: `translateY(-${distance}px)` },
+                ],
+                { duration, iterations: Infinity, easing: 'linear' }
+              );
+            }
+
+            // Pausa/reproduce al pasar mouse
+            if (carouselContainer.dataset.carouselHoverBound !== '1') {
+              carouselContainer.addEventListener('mouseenter', () => anim?.pause());
+              carouselContainer.addEventListener('mouseleave', () => anim?.play());
+              carouselContainer.dataset.carouselHoverBound = '1';
+            }
+          }
+
+          startAnim();
+          
+          // Re-inicializa la animación al cambiar tamaño de ventana
+          window.addEventListener('resize', () => {
+            if (anim) anim.cancel();
+            
+            const newSlides = Array.from(
+              track.querySelectorAll<HTMLElement>('.carousel-slide-vertical')
+            );
+            
+            if (newSlides.length >= 2) {
+              startAnim();
+            }
+          });
+        });
+      });
+    </script>
+  </div>
+</section> 
